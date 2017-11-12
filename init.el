@@ -213,7 +213,7 @@
 
 ;;; dired-subtree
 (use-package dired-subtree
-  :bind (("C-x C-y" . dired-sidebar-toggle-sidebar))
+  :bind (("C-i" . dired-sidebar-toggle-sidebar))
   :ensure t
   :commands (dired-subtree-toggle dired-subtree-cycle)
   :config
