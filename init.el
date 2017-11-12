@@ -208,11 +208,25 @@
 ;;;  multiple cursors
 (use-package multiple-cursors
   :ensure t
-  :bind (("C-s-<mouse-1>" . mc/add-cursor-on-click)
-         )
-  )
+  :bind (("C-s-<mouse-1>" . mc/add-cursor-on-click)))
 ;;;  end multiple cursors
 
+;;; dired-subtree
+(use-package dired-subtree
+  :bind (("C-x C-y" . dired-sidebar-toggle-sidebar))
+  :ensure t
+  :commands (dired-subtree-toggle dired-subtree-cycle)
+  :config
+  (setq dired-subtree-use-backgrounds nil))
+
+(use-package dired-sidebar
+  :ensure t
+  :commands (dired-sidebar-toggle-sidebar)
+  :config
+  (use-package all-the-icons-dired
+    ;; M-x all-the-icons-install-fonts
+    :ensure t
+    :commands (all-the-icons-dired-mode)))
 
 ;; Local Variables:
 ;; coding: utf-8
