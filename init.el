@@ -203,6 +203,17 @@
 (add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
 
+(when (fboundp 'electric-indent-mode) (electric-indent-mode -1))
+
+;;;  multiple cursors
+(use-package multiple-cursors
+  :ensure t
+  :bind (("C-s-<mouse-1>" . mc/add-cursor-on-click)
+         )
+  )
+;;;  end multiple cursors
+
+
 ;; Local Variables:
 ;; coding: utf-8
 ;; no-byte-compile: t
